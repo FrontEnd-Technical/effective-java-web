@@ -7,4 +7,6 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  ssr: false, // disable SSR
+  target: "static", // build static
 });
