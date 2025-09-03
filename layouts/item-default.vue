@@ -11,6 +11,10 @@
 </template>
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
+import { ref, watch } from 'vue'
 const route = useRoute()
-const title = route.meta.title || ''
+const title = ref(route.meta.title || '')
+watch(() => route.meta.title, (newTitle) => {
+    title.value = newTitle || ''
+})
 </script>
